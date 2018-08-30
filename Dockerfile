@@ -1,6 +1,6 @@
 FROM golang:1.10-alpine
-COPY . /go/src/github.com/ryodocx/oauth2_proxy
-RUN go install /go/src/github.com/ryodocx/oauth2_proxy
+RUN apk add --update git
+RUN go get -v github.com/ryodocx/oauth2_proxy
 
 FROM alpine:3.8
 WORKDIR /opt
